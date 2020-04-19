@@ -170,7 +170,9 @@ def pressAnyKey(sumbol, textLocation):
         rightMenuObj = textRightMenu.render(varRightMenu, False, (0, 255, 0))
         sc.blit(rightMenuObj,(xText, yText))
         pygame.display.update() #Обновляем экран в конце функции        
-    
+
+def connectTo(ipAdress, myFraction, humans, religion):
+    pass    
 pygame.display.update()
 while True:
     clock.tick(60)
@@ -456,5 +458,5 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and netGame == 1 and setup == 1:
-            if i.button == 1: print(ip, fraction); playsound('Sounds/start.wav')
+            if i.button == 1: playsound('Sounds/start.wav'); connectTo(ip, fraction, jiteli, konfessia)
             if i.button == 3: pass             
