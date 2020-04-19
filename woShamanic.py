@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import pygame, sys, socket
+from playsound import playsound
 import pygame.freetype
 import threading
 import random
@@ -269,7 +270,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and newGame == 0 and netGame == 0 and setup == 1:
-            if i.button == 1: pass
+            if i.button == 1: playsound('Sounds/select.wav')
             if i.button == 3: pass 
     
     if mos_x>980 and (mos_x<1280): x_inside = True # Сетевая Игра
@@ -278,7 +279,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and newGame == 0 and netGame == 0 and setup == 1:
-            if i.button == 1: netGame = 1; netGaming()
+            if i.button == 1: netGame = 1; netGaming(); playsound('Sounds/select.wav')
             if i.button == 3: pass
 
     if mos_x>980 and (mos_x<1280): x_inside = True # Настройки
@@ -287,7 +288,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and newGame == 0 and netGame == 0 and setup == 1:
-            if i.button == 1: pass
+            if i.button == 1: playsound('Sounds/select.wav')
             if i.button == 3: pass
     
     if mos_x>980 and (mos_x<1280): x_inside = True # Выход
@@ -296,6 +297,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and newGame == 0 and netGame == 0 and setup == 1:
+            playsound('Sounds/select.wav')
             pygame.quit()
 
     if mos_x>950 and (mos_x<1200): x_inside = True # Ввод IP
@@ -322,7 +324,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and netGame == 1 and setup == 1:
-            if i.button == 1: printLog("Число племенных жителей = 1"); jiteli = 1
+            if i.button == 1: printLog("Число племенных жителей = 1"); jiteli = 1; playsound('Sounds/select.wav')
             if i.button == 3: pass
 
     if mos_x>1018 and (mos_x<1082): x_inside = True # Выбираем 3 колониста
@@ -331,7 +333,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and netGame == 1 and setup == 1:
-            if i.button == 1: printLog("Число племенных жителей = 3"); jiteli = 3
+            if i.button == 1: printLog("Число племенных жителей = 3"); jiteli = 3; playsound('Sounds/select.wav')
             if i.button == 3: pass  
 
     if mos_x>1086 and (mos_x<1150): x_inside = True # Выбираем 5 колониста
@@ -340,7 +342,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and netGame == 1 and setup == 1:
-            if i.button == 1: printLog("Число племенных жителей = 5"); jiteli = 5
+            if i.button == 1: printLog("Число племенных жителей = 5"); jiteli = 5; playsound('Sounds/select.wav')
             if i.button == 3: pass  
 
     if mos_x>1154 and (mos_x<1218): x_inside = True # Выбираем 7 колониста
@@ -349,7 +351,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and netGame == 1 and setup == 1:
-            if i.button == 1: printLog("Число племенных жителей = 7"); jiteli = 7
+            if i.button == 1: printLog("Число племенных жителей = 7"); jiteli = 7; playsound('Sounds/select.wav')
             if i.button == 3: pass  
 
     if mos_x>1222 and (mos_x<1286): x_inside = True # Выбираем 10 колониста
@@ -358,7 +360,7 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and netGame == 1 and setup == 1:
-            if i.button == 1: printLog("Число племенных жителей = 10"); jiteli = 10
+            if i.button == 1: printLog("Число племенных жителей = 10"); jiteli = 10; playsound('Sounds/select.wav')
             if i.button == 3: pass             
 #====================================================================================================================
 
@@ -376,6 +378,7 @@ while True:
                 printLog("Случайным образом могут получить дебаф к настроению -2 Меланхолия и ленность")
                 printLog("Отношение к существам с другим мировозрением - нейтральное")
                 konfessia = 1
+                playsound('Sounds/select.wav')
             if i.button == 3: pass
 
     if mos_x>1018 and (mos_x<1082): x_inside = True # Слуги Хаоса
@@ -392,6 +395,7 @@ while True:
                 printLog("За посещение Храма Крови получают баф к настроению +1 и совершение доп. обрядов")
                 printLog("Негативное отношение ко всем остальным конфессиям и их приверженцам")
                 konfessia = 2
+                playsound('Sounds/select.wav')
             if i.button == 3: pass  
 
     if mos_x>1086 and (mos_x<1150): x_inside = True # Димиургионизм
@@ -408,6 +412,7 @@ while True:
                 printLog("до -20 в зависимости от количества и способа убийств.")
                 printLog("Положительно относятся к Шаманам и Тофорианцам, негативно к Слугам Хаоса")
                 konfessia = 3
+                playsound('Sounds/select.wav')
             if i.button == 3: pass  
 
     if mos_x>1154 and (mos_x<1218): x_inside = True # Шаманизм
@@ -424,6 +429,7 @@ while True:
                 printLog("При виде тотема или идола получают баф +1 к настроению.")
                 printLog("Положительно относятся к Атеистам и негативно к Слугам Хаоса")
                 konfessia = 4
+                playsound('Sounds/select.wav')
             if i.button == 3: pass  
 
     if mos_x>1222 and (mos_x<1286): x_inside = True # Тофорианизм
@@ -440,6 +446,7 @@ while True:
                 printLog("Дебафы -1 дальний и ближний бой, -2 интеллект,  -2 мана")
                 printLog("Положительно относятся к Димиургионистам и негативно к Слугам Хаоса и Шаманам")
                 konfessia = 5
+                playsound('Sounds/select.wav')
             if i.button == 3: pass
 #===========================================================================================================================================
 
@@ -449,5 +456,5 @@ while True:
     else: y_inside = False
     if x_inside and y_inside: 
         if i.type == pygame.MOUSEBUTTONDOWN and netGame == 1 and setup == 1:
-            if i.button == 1: print(ip, fraction)
+            if i.button == 1: print(ip, fraction); playsound('Sounds/start.wav')
             if i.button == 3: pass             
